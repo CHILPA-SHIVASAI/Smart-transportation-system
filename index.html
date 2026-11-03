@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101923"><title>SmartTrans — Operations platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="publicRoot"></div>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#overview"><span class="brand-mark">S</span><span>smart<span class="brand-light">trans</span><small>LOGISTICS OS</small></span></a>
+    <div class="workspace-switch"><span class="company-icon">N</span><span><b>Northstar Logistics</b><small>Demo workspace</small></span><span class="chevron">⌄</span></div>
+    <div class="nav-scroll"><div id="nav"></div></div>
+    <div class="sidebar-bottom"><div class="user-avatar" id="userInitials">SR</div><span><b id="userName">Demo user</b><small id="userRole">Administrator</small></span><button class="icon-button" id="logoutBtn" title="Log out">↪</button></div>
+  </aside>
+  <main class="main">
+  <header class="topbar"><button class="mobile-menu icon-button" id="menuToggle">☰</button><div class="crumb"><span>Workspace</span><span>/</span><b id="pageCrumb">Overview</b></div><div class="top-actions"><button class="search-trigger" id="globalSearch">⌕ <span>Search anything...</span><kbd>Ctrl K</kbd></button><button class="icon-button" id="themeToggle" title="Toggle dark mode">◐</button><button class="icon-button notify" id="notifications" title="Notifications">♧<i></i></button><div class="top-avatar" id="headerAvatar">SR</div></div></header>
+    <div class="content" id="content"></div>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <button id="assistantFab" class="assistant-fab" aria-label="Open SmartTrans assistant">✦</button><section id="assistantPanel" class="assistant-panel" hidden><header><b>SmartTrans assistant</b><button id="assistantClose" class="icon-button">×</button></header><div id="assistantMessages" class="assistant-messages"><div class="assistant-bubble">Ask about your shipments, fleet, drivers, or maintenance.</div></div><form id="assistantForm"><input id="assistantInput" placeholder="Ask about your operations…"><button class="button primary">Send</button></form></section>
+  <dialog id="recordDialog"><form method="dialog" id="recordForm"><div class="dialog-head"><div><span class="eyebrow">RECORD DETAILS</span><h2 id="dialogTitle">New record</h2></div><button class="icon-button" value="cancel" aria-label="Close">×</button></div><div id="formFields" class="form-grid"></div><div class="dialog-actions"><button class="button secondary" value="cancel">Cancel</button><button class="button primary" id="saveRecord" value="default">Save record</button></div></form></dialog>
+  <dialog id="commandDialog"><div class="command-box"><input id="commandInput" placeholder="Search modules, actions, records…"><div id="commandResults"></div><small>Use ↑ ↓ to navigate · Enter to select · Esc to close</small></div></dialog>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script><script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><script src="app.js"></script>
+</body></html>
